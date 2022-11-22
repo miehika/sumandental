@@ -9,7 +9,10 @@
       src="https://kit.fontawesome.com/5e1d362a8f.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.7.2.min.js"
+    ></script>
     <link rel="icon" type="image/x-icon" href="./resources/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,14 +98,15 @@
       font-family: 'Lato', sans-serif;
 
       font-size: 16px;
-      margin: 0;
-      padding: 0;
+margin:0;
+      padding: 80px 0px 10px 0px;
       color: var(--darkblue);
     }
     /* Mobile Styles */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1180px) {
       body {
         font-size: 14px;
+        padding:80px 0px 90px 0px!important;
       }
       header {
         padding: 0 10px !important;
@@ -112,29 +116,35 @@
       }
       .nav_btn {
         padding: 10px 20px !important;
-        margin: 0 5px !important;
       }
       .logo_link {
         font-size: 16px !important;
       }
       .hero {
         margin-top: 50px;
-        padding: 0 20px !important;
+        padding: 0 20px 40px 20px !important;
         align-items: center !important;
         justify-content: center !important;
 
         flex-direction: column !important;
       }
     }
-
+    i {
+      margin: 0px 5px;
+    }
     header {
       padding: 0px 20px;
       height: 80px;
-
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 99999;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
+      background-color: white;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     }
     .logo {
@@ -185,16 +195,17 @@
       background-color: rgb(0, 0, 88, 0.1);
     }
     .nav_btn {
+      font-family: 'Lato', sans-serif;
       background-color: white;
       color: var(--darkblue);
       border: 2px solid var(--darkblue);
       border-radius: 10px;
       padding: 10px 20px;
       font-weight: 400;
-
       cursor: pointer;
       transition: 0.25s;
       text-decoration: none;
+      text-align: center;
     }
     .nav_btn:hover {
       background-color: var(--darkblue);
@@ -205,8 +216,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-     
-      padding: 50px 100px;
+
+      padding: 50px 100px 100px 100px;
     }
     .hero_banner {
       width: 100%;
@@ -233,7 +244,7 @@
           >Get Directions
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/714px-Google_Maps_icon_%282020%29.svg.png"
-            style="margin-bottom: -3px"
+            style="margin: 0px 0px -3px 5px"
             height="20px"
             alt=""
           />
@@ -247,16 +258,14 @@
         <br />
         <img class="hero_banner" src="./resources/hero_banner.png" alt="" />
       </div>
-      <div class="hero_appointment"
-        style="
-         
-        "
-      >
-        <a class="nav_btn" href="tel:+917000985727"
+      <div class="hero_appointment" style="">
+        <a
+          style="width: 90% !important"
+          class="nav_btn"
+          href="tel:+918989931019"
           ><i class="fa-solid fa-phone"></i> Call now to book an appointment
         </a>
-        <span style="margin: 10px 0 ">OR</span>
-        
+        <span style="margin: 15px 0">OR</span>
 
         <div class="appointmentContainer">
           <div class="appointmentTitle">
@@ -266,37 +275,13 @@
             />
           </div>
           <div class="appointmentSubTitle">
-            <span style="max-width: inherit;">
+            <span style="max-width: inherit">
               Click on the button below to open Whatsapp and send us a message.
-              We will get back to you <br> as soon as possible.
+              We will get back to you <br />
+              as soon as possible.
             </span>
           </div>
           <div class="appointmentForm">
-            <div class="appointmentFormLineOne">
-              <div class="inputContainer" style="width:48%!important;">
-                <label for="date">Pick a date: </label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                 minDate
-                  required
-                />
-              </div>
-
-              <div class="inputContainer"style="width:48%!important;" >
-                <label for="time">Pick a Time: </label>
-                <select name="time" id="time" required >
-                    <option value="04:30 PM">04:30 PM</option>
-                    <option value="05:00 PM">05:00 PM</option>
-                    <option value="05:30 PM">05:30 PM</option>
-                    <option value="06:00 PM">06:00 PM</option>
-                    <option value="06:30 PM">06:30 PM</option>
-                    <option value="07:00 PM">07:00 PM</option>
-                    <option value="07:30 PM">07:30 PM</option>
-                </select>
-            </div>
-            </div>
             <div class="appointmentFormLineTwo">
               <div class="inputContainer">
                 <label for="name">Name: </label>
@@ -309,10 +294,62 @@
                 />
               </div>
             </div>
+            <div class="appointmentFormLineTwo">
+              <div class="inputContainer">
+                <label for="services">Service Required: </label>
+                <select name="services" id="services" required>
+                  <option value="General Checkup">General Checkup</option>
+                  <option value="Teeth Cleanings/ whitening">
+                    Teeth Cleanings/ whitening
+                  </option>
+                  <option value="Dental cosmetic treatment">
+                    Dental cosmetic treatment
+                  </option>
+                  <option value="Dental Crowns & Bridges">
+                    Dental Crowns & Bridges
+                  </option>
+                  <option value="Dental Restorations (Tooth Fillings)">
+                    Dental Restorations (Tooth Fillings)
+                  </option>
+                  <option value="Orthodontic Treatments">
+                    Orthodontic Treatments
+                  </option>
+                  <option value="Dental Veneers">Dental Veneers</option>
+                  <option value="Denture (Artificial teeth replacement)">
+                    Dentures (Artificial teeth replacement)
+                  </option>
+
+                  <option value="Root Canal Therapy">Root Canal Therapy</option>
+                  <option value="Dental Sealants">Dental Sealants</option>
+                  <option value="Tooth Extractions">Tooth Extractions</option>
+                  <option value="Implants">Implants</option>
+                  <option value="Oral Surgeries">Oral Surgeries</option>
+                </select>
+              </div>
+            </div>
+            <div class="appointmentFormLineOne">
+              <div class="inputContainer" style="width: 47% !important">
+                <label for="date">Pick a date: </label>
+                <input type="date" name="date" id="date" minDate required />
+              </div>
+
+              <div class="inputContainer" style="width: 47% !important">
+                <label for="time">Pick a Time: </label>
+                <select name="time" id="time" required>
+                  <option value="04:30 PM">04:30 PM</option>
+                  <option value="05:00 PM">05:00 PM</option>
+                  <option value="05:30 PM">05:30 PM</option>
+                  <option value="06:00 PM">06:00 PM</option>
+                  <option value="06:30 PM">06:30 PM</option>
+                  <option value="07:00 PM">07:00 PM</option>
+                  <option value="07:30 PM">07:30 PM</option>
+                </select>
+              </div>
+            </div>
             <div class="appointmentFormLineThree">
               <!-- submit button -->
               <button type="submit" id="submit" class="nav_btn">
-                Book Appointment
+                Book Now
               </button>
             </div>
           </div>
@@ -323,18 +360,54 @@
       </div> -->
       </div>
     </div>
+    <div class="footer">
+      Powered By <a href="mailto:contact@miehikasahu.com">MS DESIGNS</a>
+    </div>
     <script language="javascript">
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-    
-        today = yyyy + '-' + mm + '-' + dd;
-        $('#date').attr('min',today);
-        $('#date').attr('value',yyyy + '-' + mm + '-' + (parseInt(dd)+1));
-        $('#date').attr('max',yyyy + '-' + mm + '-' + (parseInt(dd)+7));
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
 
+      today = yyyy + '-' + mm + '-' + dd;
+      $('#date').attr('min', today);
+      $('#date').attr('value', yyyy + '-' + mm + '-' + (parseInt(dd) + 1));
+      $('#date').attr('max', yyyy + '-' + mm + '-' + (parseInt(dd) + 7));
 
+      //send whatsapp appointment
+
+      var appointmentDate = document.getElementById('date');
+      var appointmentTime = document.getElementById('time');
+      var appointmentName = document.getElementById('name');
+      var appointmentService = document.getElementById('services');
+      var appointmentSubmit = document.getElementById('submit');
+
+      appointmentSubmit.addEventListener('click', function () {
+        var appointmentDateValue = appointmentDate.value;
+        var appointmentTimeValue = appointmentTime.value;
+        var appointmentNameValue = appointmentName.value;
+        var appointmentServiceValue = appointmentService.value;
+        if (!appointmentNameValue.trim()) {
+          appointmentName.style.boxShadow = '0 0 5px red';
+          appointmentName.style.animation = 'shake 0.5s';
+        } else {
+          var appointmentMessage =
+            'Hello,%0D%0AI would like to book an appointment.%0D%0A' +
+            'Patient Name: ' +
+            appointmentNameValue +
+            '%0D%0AAppointment Date: ' +
+            appointmentDateValue +
+            ' (yyyy-mm-dd)%0D%0A' +
+            'Appointment Time: ' +
+            appointmentTimeValue +
+            '%0D%0A' +
+            'Service Required: ' +
+            appointmentServiceValue;
+          var appointmentLink =
+            'https://wa.me/918989931019?text=' + appointmentMessage;
+          window.open(appointmentLink);
+        }
+      });
     </script>
   </body>
 </html>
